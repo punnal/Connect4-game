@@ -1,0 +1,54 @@
+" Plugins
+"
+filetype off
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'shougo/deoplete.nvim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on  " allows auto-indenting depending on file type
+
+" Theme
+"
+" color scheme
+set background=dark
+colorscheme PaperColor
+let g:airline_theme='luna'
+
+"- Vim Option Setup
+"
+" Line number
+set number                 " Turn on line numbers
+set relativenumber         " Make line numbers relative to cursor
+" On-screen cues
+set showcmd                " Show letters as they're typed
+set noshowmode             " use airline instead
+" Indentation
+set expandtab              " converts tabs to white space
+set shiftwidth=4           " width for autoindents
+set autoindent             " indent a new line the same amount as the line just typed
+" Clip board
+set clipboard=unnamedplus
+
+
+" Key maping
+"
+" save
+noremap <F2> :w<cr>
+inoremap <F2> <C-c>:w<cr>
+" Nerd Tree
+map <C-n> :NERDTreeToggle<CR>
+inoremap <C-n> <C-c>:NERDTreeToggle<CR>
+
+" Plugin settings
+"
+" deoplete
+let g:deoplete#enable_at_startup = 1
